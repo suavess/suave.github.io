@@ -1,0 +1,5 @@
+- group: 这是一个分组
+  description: 分组描述
+  items:
+    - title: 百度
+      url: https://www.baidu.com
