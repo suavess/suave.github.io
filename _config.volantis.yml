@@ -169,7 +169,7 @@ article:
       donate:
         enable: true
         images:
-          - https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png
+          - https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194138.png
           - https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194201.png
     # 文章底部信息
     # 从 meta_library 中取
@@ -863,14 +863,10 @@ rightmenu:
     old: #https://static.inkss.cn/img/article/
     new: #https://cdn.jsdelivr.net/gh/inkss/inkss-cdn@master/img/article/
   ### 自定义菜单 ###
-  contributors:
-    name: 加入社区
-    icon: fa fa-fan fa-spin
-    url: https://volantis.js.org/contributors/
   source_docs:
     name: 本站源码
     icon: fa fa-code-branch
-    url: https://github.com/volantis-x/volantis-docs/
+    url:  https://github.com/suavess/suavess.github.io/
   source_theme:
     name: 主题源码
     icon: fa fa-code-branch
@@ -1064,8 +1060,8 @@ custom_css:
 analytics:
   busuanzi: #https://cdn.jsdelivr.net/gh/volantis-x/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js
   leancloud: # 请使用自己的 id & key 以防止数据丢失
-    app_id: # u9j57bwJod4EDmXWdxrwuqQT-MdYXbMMI
-    app_key: # jfHtEKVE24j0IVCGHbvuFClp
+    app_id: zBv0WbP19bXqHsppOdWalzec-9Nh9j0Va
+    app_key: oMN9WudgbKho82qD9XOwpAcR
     custom_api_server: # 国际版一般不需要写，除非自定义了 API Server
 ############################### Analytics ############################### > end
 

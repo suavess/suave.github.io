@@ -1,9 +1,9 @@
 ---
 title: Java集合类-RandomAccess接口
-date: 2021-10-26 14:59:56
+date: 2021-4-26 12:59:21
 tags: 
     - Java
-    - Java集合
+    - 集合
 category: 
     - Java
 ---
