@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://suavess.github.io/tags/mysql/"/>
+  
+  <link rel="canonical" href="https://suavess.github.io/2022/06/16/java中switch关键字对string类型的支持/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,26 @@
   <meta content="Suave&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1655383569815" as="style">
+  <link rel="preload" href="/css/style.css?time=1655383569772" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>标签：MySQL - Suave's Blog</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Suave&#39;s Blog">
-<meta property="og:url" content="https://suavess.github.io/tags/MySQL/index.html">
+  <title>Java中switch关键字对String类型的支持 - Suave's Blog</title>
+  <meta name="keywords" content="Java,反编译,null">
+  <meta name="description" content="在java7以后，switch的参数可以是String类型了，到目前为止switch支持这样几种数据类型：byte short int char String 。接下来我们就看一下，switch到底是如何实现的。  ps: 本文使用的反编译工具为jadx  switch对整型的支持一段很简单的通过整型进行switch的代码 123456789101112131415public class Tes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java中switch关键字对String类型的支持">
+<meta property="og:url" content="https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/index.html">
 <meta property="og:site_name" content="Suave&#39;s Blog">
+<meta property="og:description" content="在java7以后，switch的参数可以是String类型了，到目前为止switch支持这样几种数据类型：byte short int char String 。接下来我们就看一下，switch到底是如何实现的。  ps: 本文使用的反编译工具为jadx  switch对整型的支持一段很简单的通过整型进行switch的代码 123456789101112131415public class Tes">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-06-16T12:09:14.000Z">
+<meta property="article:modified_time" content="2022-06-16T12:45:42.845Z">
 <meta property="article:author" content="Suave">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="反编译">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1689,8 +1695,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1655383569815" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1655383569815"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1655383569772" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1655383569772"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2405,7 +2411,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026140148.png"></div>
 
@@ -2487,492 +2493,296 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/02/28/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%BA%8C%EF%BC%89/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Suave's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/28/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%BA%8C%EF%BC%89/"  itemprop="url">
-        MySQL锁相关（二）
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        Innodb行锁
-行锁特点 ：偏向InnoDB 存储引擎，开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低,并发度也最高。
+    
+      <h1 class="title" itemprop="name headline">
+        Java中switch关键字对String类型的支持
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <p itemprop="name">Suave</p>
+  </a>
+</div>
 
-InnoDB 与 MyISAM 的最大不同有两点：一是支持事务；二是 采用了行级锁。
-背景事务及其ACID属性事务是由一组SQL语句组成的逻辑处理单元。
-事务具有以下4个特性，简称为事务ACID属性。
-
-
-
-ACID属性
-含义
-
-
-
-原子性（Atomic...
-      
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Java/">Java</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-28T10:57:32+08:00">2022-02-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
+
+
           
         
-      </div>
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-06-16T20:09:14+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年6月16日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       
-        <div>
-          <a class='readmore' href='/2022/02/28/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%BA%8C%EF%BC%89/' itemprop="url">
-            阅读全文
-          </a>
+      <div id="lc-pv" data-title="Java中switch关键字对String类型的支持" data-path="/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <p>在java7以后，switch的参数可以是String类型了，到目前为止switch支持这样几种数据类型：<code>byte</code> <code>short</code> <code>int</code> <code>char</code> <code>String</code> 。接下来我们就看一下，switch到底是如何实现的。</p>
+<blockquote>
+<p>ps: 本文使用的反编译工具为jadx</p>
+</blockquote>
+<h3 id="switch对整型的支持"><a href="#switch对整型的支持" class="headerlink" title="switch对整型的支持"></a>switch对整型的支持</h3><p>一段很简单的通过整型进行switch的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> a = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">switch</span> (a) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过反编译后</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"><span class="comment">/* loaded from: Test.class */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>可以看到，经过反编译后的代码基本没有变化，<strong>因此switch对int的判断是直接比较整数的值</strong>。</p>
+<h3 id="switch对字符类型的支持"><a href="#switch对字符类型的支持" class="headerlink" title="switch对字符类型的支持"></a>switch对字符类型的支持</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> a = <span class="string">&#x27;b&#x27;</span>;</span><br><span class="line">        <span class="keyword">switch</span> (a) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过反编译之后</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"><span class="comment">/* loaded from: Test.class */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="number">98</span>) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">97</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">98</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过以上的代码作比较我们发现：对char类型进行比较的时候，实际上比较的是ascii码，编译器会把char型变量转换成对应的int型变量</p>
+<h3 id="switch对字符串支持的实现"><a href="#switch对字符串支持的实现" class="headerlink" title="switch对字符串支持的实现"></a>switch对字符串支持的实现</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    String str = <span class="string">&quot;world&quot;</span>;</span><br><span class="line">    <span class="keyword">switch</span> (str) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;hello&quot;</span>:</span><br><span class="line">            System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="string">&quot;world&quot;</span>:</span><br><span class="line">            System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">default</span>:</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>经过反编译之后</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo;</span><br><span class="line"><span class="comment">/* loaded from: Test.class */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">char</span> c = <span class="number">65535</span>;</span><br><span class="line">        <span class="keyword">switch</span> (<span class="string">&quot;world&quot;</span>.hashCode()) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">99162322</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;world&quot;</span>.equals(<span class="string">&quot;hello&quot;</span>)) &#123;</span><br><span class="line">                    c = <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">113318802</span>:</span><br><span class="line">                <span class="keyword">if</span> (<span class="string">&quot;world&quot;</span>.equals(<span class="string">&quot;world&quot;</span>)) &#123;</span><br><span class="line">                    c = <span class="number">1</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">0</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;hello&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">                System.out.println(<span class="string">&quot;world&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>原来字符串的switch是通过<code>equals()</code>和<code>hashCode()</code>方法来实现的。<strong>记住，switch中只能使用整型</strong>，比如<code>byte</code>。<code>short</code>，<code>char</code>(ackii码是整型)以及<code>int</code>。还好<code>hashCode()</code>方法返回的是<code>int</code>，而不是<code>long</code>。通过这个很容易记住<code>hashCode</code>返回的是<code>int</code>这个事实。仔细看下可以发现，进行<code>switch</code>的实际是哈希值，然后通过使用equals方法比较进行安全检查，这个检查是必要的，因为哈希可能会发生碰撞。因此它的性能是不如使用枚举进行switch或者使用纯整数常量，但这也不是很差。因为Java编译器只增加了一个<code>equals</code>方法，如果你比较的是字符串字面量的话会非常快，比如”abc” ==”abc”。如果你把<code>hashCode()</code>方法的调用也考虑进来了，那么还会再多一次的调用开销，因为字符串一旦创建了，它就会把哈希值缓存起来。因此如果这个<code>switch</code>语句是用在一个循环里的，比如逐项处理某个值，或者游戏引擎循环地渲染屏幕，这里<code>hashCode()</code>方法的调用开销其实不会很大。</p>
+<p>总结一下我们可以发现，<strong>其实switch只支持一种数据类型，那就是整型，其他数据类型都是转换成整型之后再使用switch的。</strong></p>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/>https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194138.png' alt="This is a picture without description" >
+            
+              <img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194201.png' alt="This is a picture without description" >
+            
+          </div>
         </div>
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-06-16T20:45:42+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年6月16日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/02/27/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%B8%80%EF%BC%89/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>反编译</p></a></div>
+  <span hidden itemprop="keywords">Java 反编译</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/&title=Java中switch关键字对String类型的支持 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/&title=Java中switch关键字对String类型的支持 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/&title=Java中switch关键字对String类型的支持 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：865 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/06/16/Java%E7%BC%96%E8%AF%91%E5%99%A8%E5%AF%B9'+'%E7%9A%84%E9%87%8D%E8%BD%BD/'>
+          <p class='title'>Java编译器对'+'的重载<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>Java中对字符串进行拼接一般有两种方式，通过Stirng.concat()方法进行拼接，或者直接使用+号拼接，一般来说，我们都会使用第二种方式。
+有人把Java中使用+拼接字符串的功能理解为运...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/27/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%B8%80%EF%BC%89/"  itemprop="url">
-        MySQL锁相关（一）
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        锁分类从对数据操作的粒度分 ：
-1） 表锁：操作时，会锁定整个表。
-2） 行锁：操作时，会锁定当前操作行。
-从对数据操作的类型分：
-1） 读锁（共享锁）：针对同一份数据，多个读操作可以同时进行而不会互相影响。
-2） 写锁（排它锁）：当前操作没有完成之前，它会阻断其他写锁和读锁。
-MySQL中的锁相对其他数据库而言，MySQL的锁机制比较简单，其最显著的特点是不同的存储引擎支持不同的锁机制。下...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-27T16:07:46+08:00">2022-02-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/27/MySQL%E9%94%81%E7%9B%B8%E5%85%B3%EF%BC%88%E4%B8%80%EF%BC%89/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/02/25/MySQL%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
+  </article>
   
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/25/MySQL%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF/"  itemprop="url">
-        MySQL索引的失效场景
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        
-索引设置
-
-
-1. 最左前缀法则
-最左前缀法则指的是查询从索引的最左前列开始，并且不跳过索引中的列。
-
-
-匹配最左前缀法则，where条件中的顺序不影响使用索引，MySQL优化器会自动选择
 
 
 
-违反最左前缀法则，此时不走索引
 
 
-
-符合最左索引，但中间有跳跃，此时只会走最左边的部分索引，可以看到key_len（即使用的索引长度）是比第一张图中的key_len小的
-
-
-2. 范围查询右边的...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-25T10:23:52+08:00">2022-02-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/25/MySQL%E7%B4%A2%E5%BC%95%E7%9A%84%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/02/24/MySQL%E4%B8%AD%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/24/MySQL%E4%B8%AD%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8/"  itemprop="url">
-        MySQL中的触发器
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        1. 介绍
-触发器是与表有关的数据库对象，指在 insert/update/delete 之前或之后，触发并执行触发器中定义的SQL语句集合。触发器的这种特性可以协助应用在数据库端确保数据的完整性 , 日志记录 , 数据校验等操作 。
-
-使用别名 OLD 和 NEW 来引用触发器中发生变化的记录内容，这与其他的数据库是相似的。现在触发器还只支持行级触发，不支持语句级触发。（Oracle既有行...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-24T19:36:53+08:00">2022-02-24</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/24/MySQL%E4%B8%AD%E7%9A%84%E8%A7%A6%E5%8F%91%E5%99%A8/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/02/22/MySQL%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2022/02/22/MySQL%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84/"  itemprop="url">
-        MySQL索引结构
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        索引是在MySQL的存储引擎层中实现的，而不是在服务器层实现的。所以每种存储引擎的索引都不一定完全相同，也不是所有的存储引擎都支持所有的索引类型的。MySQL目前提供了以下4种索引：
-
-BTREE 索引 ： 最常见的索引类型，大部分索引都支持 B 树索引。
-HASH 索引：只有Memory引擎支持 ， 使用场景简单 。
-R-tree 索引（空间索引）：空间索引是MyISAM引擎的一个特殊索引...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2022-02-22T10:38:57+08:00">2022-02-22</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2022/02/22/MySQL%E7%B4%A2%E5%BC%95%E7%BB%93%E6%9E%84/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/"  itemprop="url">
-        MySQL-limit数据丢失问题
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        
-今天在项目中遇到一个很奇怪的bug，前端调接口分页返回数据时，有两条数据在第一页的最后返回了，然后又在第二页的头返回了，本以为是程序的问题，排查了半天最后发现是Mysql的问题。
-
-Mysql表数据
-查询流程先尝试查询前二十条数据1SELECT * FROM tb_customer_open_sea WHERE corpid = &#x27;1&#x27; AND del = 0 LIMI...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-26T15:06:42+08:00">2021-10-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
-
-
-    
-  
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2980,136 +2790,34 @@ Mysql表数据
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Suave's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1132888093@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/suavess/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ElasticSearch/" href="/categories/ElasticSearch/"
-            active-action="action-categoriesElasticSearch"
-            ><div class='name'>ElasticSearch</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(5)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MySQL/" href="/categories/MySQL/"
-            active-action="action-categoriesMySQL"
-            ><div class='name'>MySQL</div><div class='badge'>(6)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E5%AF%B9%E6%95%B4%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-text">switch对整型的支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E5%AF%B9%E5%AD%97%E7%AC%A6%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-text">switch对字符类型的支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#switch%E5%AF%B9%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%94%AF%E6%8C%81%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">switch对字符串支持的实现</span></a></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/tags/ElasticSearch/" style="font-size: 24px; color: #555">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 19px; color: #777">Java</a> <a href="/tags/MySQL/" style="font-size: 21.5px; color: #666">MySQL</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 16.5px; color: #888">反编译</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 16.5px; color: #888">索引</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/" style="font-size: 14px; color: #999">索引失效</a> <a href="/tags/%E8%A1%8C%E9%94%81/" style="font-size: 14px; color: #999">行锁</a> <a href="/tags/%E8%A1%A8%E9%94%81/" style="font-size: 14px; color: #999">表锁</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 14px; color: #999">触发器</a> <a href="/tags/%E9%94%81%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">锁机制</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 14px; color: #999">集合</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3138,14 +2846,15 @@ Mysql表数据
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="Java中switch关键字对String类型的支持";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3259,8 +2968,8 @@ Mysql表数据
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1655383569815')
-      volantis.js('/js/message.js?time=1655383569815', () => {
+      volantis.css('/css/message.css?time=1655383569772')
+      volantis.js('/js/message.js?time=1655383569772', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3305,8 +3014,8 @@ Mysql表数据
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1655383569815')
-      volantis.js('/js/message.js?time=1655383569815', () => {
+      volantis.css('/css/message.css?time=1655383569772')
+      volantis.js('/js/message.js?time=1655383569772', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3365,8 +3074,8 @@ Mysql表数据
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1655383569815')
-      volantis.js('/js/message.js?time=1655383569815', () => {
+      volantis.css('/css/message.css?time=1655383569772')
+      volantis.js('/js/message.js?time=1655383569772', () => {
         hideMessage(done);
       });
     } else {
@@ -3548,7 +3257,7 @@ Mysql表数据
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1655383569815')
+    volantis.js('/js/rightMenu.js?time=1655383569772')
   </script>
 
 
@@ -3661,19 +3370,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1655383569815")
+        volantis.js("/js/plugins/sites.js?time=1655383569772")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1655383569815")
+        volantis.js("/js/plugins/friends.js?time=1655383569772")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1655383569815")
+        volantis.js("/js/plugins/contributors.js?time=1655383569772")
       }
     
   };
@@ -3801,7 +3510,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1655383569815').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1655383569772').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3810,7 +3519,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1655383569815.js"></script>
+<script src="/js/app.js?time=1655383569772.js"></script>
 
 
 <!-- optional -->
@@ -3823,7 +3532,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1655383569815");
+    return volantis.js("/js/search/hexo.js?time=1655383569772");
   }
 
   function loadSearchService() {
@@ -4279,7 +3988,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://suavess.github.io/","name":"Suave's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://suavess.github.io/tags/MySQL/","name":"MySQL"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Suave's Blog","url":"https://suavess.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","description":""},"publisher":{"@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://suavess.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://suavess.github.io/","name":"Suave's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://suavess.github.io/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"https://suavess.github.io/2022/06/16/Java中switch关键字对String类型的支持/","name":"Java中switch关键字对String类型的支持"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Java中switch关键字对String类型的支持","description":"","datePublished":"2022-06-16T12:09:14.000Z","dateModified":"2022-06-16T12:45:42.845Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/"},"author":{"@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/"},"publisher":{"@type":"Organization","name":"Suave's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://suavess.github.io/2022/06/16/Java%E4%B8%ADswitch%E5%85%B3%E9%94%AE%E5%AD%97%E5%AF%B9String%E7%B1%BB%E5%9E%8B%E7%9A%84%E6%94%AF%E6%8C%81/","wordCount":0,"articleSection":"Java","keywords":"Java,反编译","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
