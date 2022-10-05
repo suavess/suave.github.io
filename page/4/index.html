@@ -20,7 +20,7 @@
   <meta content="Suave&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1656408566489" as="style">
+  <link rel="preload" href="/css/style.css?time=1664954297851" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1689,8 +1689,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1656408566489" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1656408566489"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1664954297851" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1664954297851"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2496,6 +2496,95 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         
           <div class='post-wrapper'>
             <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/">
+  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Suave's Blog">
+  </span>
+  
+  
+  
+    <span hidden>
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+    </span>
+  
+  
+    
+    <h2 class="article-title"  itemprop="name headline">
+      <a href="/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/"  itemprop="url">
+        2、ElasticSearch索引的创建查询及删除
+      </a>
+    </h2>
+  
+  <div class='md' itemprop="articleBody">
+    
+      
+        
+后续操作均在Kibana的Dev Tools中完成
+
+创建索引创建使用PUT的请求方式
+先创建一个名为shopping的索引
+1PUT shopping
+
+
+此时再次调用则会报错
+
+查询索引
+查询指定索引
+将PUT改为GET即可
+1GET shopping
+
+
+
+查询所有的索引
+加上?v后会展示字段头信息
+1GET _cat/indices?v
+
+
+删除索引与查询指定索引的逻辑一致，将请求...
+      
+    
+  </div>
+  
+    <div class='meta-v3' line_style='solid'>
+      <div>
+        
+          
+          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
+            <meta itemprop="name" content="Suave">
+            <meta itemprop="url" content="/">
+          </span>
+        
+        <time itemprop="dateCreated datePublished" datetime="2021-10-27T10:30:25+08:00">2021-10-27</time>
+        
+          <span class="dot"></span>
+          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
+          
+            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
+            </span>
+          
+        
+      </div>
+      
+        <div>
+          <a class='readmore' href='/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/' itemprop="url">
+            阅读全文
+          </a>
+        </div>
+      
+    </div>
+  
+
+</div>
+
+          </div>
+        
+      
+        
+          <div class='post-wrapper'>
+            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
   <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/26/1%E3%80%81Docker%E5%AE%89%E8%A3%85ElasticSearch%E5%92%8CKibana/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Suave's Blog">
@@ -2789,76 +2878,6 @@ CAS操作的就是乐观锁，每次不加锁而是假设没有冲突而去完�
           </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2020/07/26/Java%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2020/07/26/Java%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/"  itemprop="url">
-        Java中的值传递和引用传递
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        
-Java中的参数传递分为值传递和引用传递，基本类型是值传递，封装类是引用传递。
-
-值传递1234567891011public class Test01 &#123;    public static void change(int num) &#123;        num = 1;    &#125;    public static void main(String[] args)...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2020-07-26T15:06:05+08:00">2020-07-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Java/">Java</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2020/07/26/Java%E4%B8%AD%E7%9A%84%E5%80%BC%E4%BC%A0%E9%80%92%E5%92%8C%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
     
   </section>
   
@@ -2873,8 +2892,14 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
           </a>
         
         <p class="current">
-          4 / 4
+          4 / 5
         </p>
+        
+          <a class="next" rel="next" href="/page/5/">
+            <section class="post next white-box shadow">
+              &nbsp;下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i>
+            </section>
+          </a>
         
       </div>
     
@@ -2985,6 +3010,11 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
             active-action="action-categoriesMySQL"
             ><div class='name'>MySQL</div><div class='badge'>(6)</div></a></li>
         
+          <li><a class="flat-box"
+            title="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"
+            active-action="action-categoriesE58886E5B883E5BC8F"
+            ><div class='name'>分布式</div><div class='badge'>(1)</div></a></li>
+        
       </ul>
     </div>
   </section>
@@ -3007,7 +3037,7 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
 
 
     <div class='content'>
-      <a href="/tags/Docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/tags/ElasticSearch/" style="font-size: 24px; color: #555">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 20.67px; color: #6c6c6c">Java</a> <a href="/tags/MySQL/" style="font-size: 20.67px; color: #6c6c6c">MySQL</a> <a href="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 14px; color: #999">关键字</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 17.33px; color: #828282">反编译</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 17.33px; color: #828282">索引</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/" style="font-size: 14px; color: #999">索引失效</a> <a href="/tags/%E8%A1%8C%E9%94%81/" style="font-size: 14px; color: #999">行锁</a> <a href="/tags/%E8%A1%A8%E9%94%81/" style="font-size: 14px; color: #999">表锁</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 14px; color: #999">触发器</a> <a href="/tags/%E9%94%81%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">锁机制</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 14px; color: #999">集合</a>
+      <a href="/tags/Docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/tags/ElasticSearch/" style="font-size: 24px; color: #555">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/MySQL/" style="font-size: 19px; color: #777">MySQL</a> <a href="/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 14px; color: #999">事务</a> <a href="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 14px; color: #999">关键字</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 14px; color: #999">分布式</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 16.5px; color: #888">反编译</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 16.5px; color: #888">索引</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/" style="font-size: 14px; color: #999">索引失效</a> <a href="/tags/%E8%A1%8C%E9%94%81/" style="font-size: 14px; color: #999">行锁</a> <a href="/tags/%E8%A1%A8%E9%94%81/" style="font-size: 14px; color: #999">表锁</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 14px; color: #999">触发器</a> <a href="/tags/%E9%94%81%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">锁机制</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 14px; color: #999">集合</a>
     </div>
   </section>
 
@@ -3168,8 +3198,8 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1656408566489')
-      volantis.js('/js/message.js?time=1656408566489', () => {
+      volantis.css('/css/message.css?time=1664954297851')
+      volantis.js('/js/message.js?time=1664954297851', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3214,8 +3244,8 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1656408566489')
-      volantis.js('/js/message.js?time=1656408566489', () => {
+      volantis.css('/css/message.css?time=1664954297851')
+      volantis.js('/js/message.js?time=1664954297851', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3274,8 +3304,8 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1656408566489')
-      volantis.js('/js/message.js?time=1656408566489', () => {
+      volantis.css('/css/message.css?time=1664954297851')
+      volantis.js('/js/message.js?time=1664954297851', () => {
         hideMessage(done);
       });
     } else {
@@ -3457,7 +3487,7 @@ Java中的参数传递分为值传递和引用传递，基本类型是值传递�
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1656408566489')
+    volantis.js('/js/rightMenu.js?time=1664954297851')
   </script>
 
 
@@ -3570,19 +3600,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1656408566489")
+        volantis.js("/js/plugins/sites.js?time=1664954297851")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1656408566489")
+        volantis.js("/js/plugins/friends.js?time=1664954297851")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1656408566489")
+        volantis.js("/js/plugins/contributors.js?time=1664954297851")
       }
     
   };
@@ -3710,7 +3740,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1656408566489').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1664954297851').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3719,7 +3749,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1656408566489.js"></script>
+<script src="/js/app.js?time=1664954297851.js"></script>
 
 
 <!-- optional -->
@@ -3732,7 +3762,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1656408566489");
+    return volantis.js("/js/search/hexo.js?time=1664954297851");
   }
 
   function loadSearchService() {

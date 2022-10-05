@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="https://suavess.github.io/archives/2021/10/"/>
+  
+  <link rel="canonical" href="https://suavess.github.io/2022/10/05/分布式事务基础/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,20 +20,27 @@
   <meta content="Suave&#39;s Blog" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1664954297830" as="style">
+  <link rel="preload" href="/css/style.css?time=1664954297748" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>归档：2021/10 - Suave's Blog</title>
-  <meta name="keywords" content="null">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Suave&#39;s Blog">
-<meta property="og:url" content="https://suavess.github.io/archives/2021/10/index.html">
+  <title>分布式事务基础 - Suave's Blog</title>
+  <meta name="keywords" content="Java,分布式,事务,null">
+  <meta name="description" content="事务概念指的就是一个操作单元，在这个操作单元中的所有操作最终要保持一致的行为，要么所有操作都成功，要么所有的操作都被撤销。 通俗一点？举个生活中的例子：你去小卖铺买东西，“一手交钱，一手交货”就是一个事务的例子，交钱和交货必 须全部成功，事务才算成功，任一个活动失败，事务将撤销所有已成功的活动。 事务可以看做是一次大的操作，它由不同的小操作组成，这些操作要么全部成功，要么全部失败。 事务的四个特性">
+<meta property="og:type" content="article">
+<meta property="og:title" content="分布式事务基础">
+<meta property="og:url" content="https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Suave&#39;s Blog">
+<meta property="og:description" content="事务概念指的就是一个操作单元，在这个操作单元中的所有操作最终要保持一致的行为，要么所有操作都成功，要么所有的操作都被撤销。 通俗一点？举个生活中的例子：你去小卖铺买东西，“一手交钱，一手交货”就是一个事务的例子，交钱和交货必 须全部成功，事务才算成功，任一个活动失败，事务将撤销所有已成功的活动。 事务可以看做是一次大的操作，它由不同的小操作组成，这些操作要么全部成功，要么全部失败。 事务的四个特性">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2022-10-05T05:44:19.000Z">
+<meta property="article:modified_time" content="2022-10-05T07:18:06.329Z">
 <meta property="article:author" content="Suave">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="分布式">
+<meta property="article:tag" content="事务">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
   <!-- feed -->
@@ -1689,8 +1696,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1664954297830" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1664954297830"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1664954297748" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1664954297748"></noscript>
     <script>
       var userColorScheme=localStorage.getItem("color-scheme")
       if(userColorScheme){
@@ -2117,7 +2124,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2405,7 +2412,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div class='cover-bg lazyload placeholder' data-bg="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026140148.png"></div>
 
@@ -2488,700 +2495,431 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/28/8%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95Mapping%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="Suave's Blog">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/28/8%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95Mapping%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB/"  itemprop="url">
-        8、ElasticSearch索引Mapping映射关系
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
+    
+      <h1 class="title" itemprop="name headline">
+        分布式事务基础
+      </h1>
+      <div class='new-meta-box'>
         
-ElasticSearch中的映射关系类似于关系型数据库中的表结构，用于说明该字段的类型及约束条件
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <p itemprop="name">Suave</p>
+  </a>
+</div>
 
-创建一个新的索引1PUT user
-
-创建映射1234567891011121314151617PUT user/_mapping&#123;  &quot;properties&quot;: &#123;    &quot;name&quot;:&#123;    	&quot;type...
-      
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/">分布式</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" itemprop="url"><span itemprop="name">分布式</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-28T10:08:35+08:00">2021-10-28</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
+
+
           
         
-      </div>
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2022-10-05T13:44:19+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年10月5日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
       
-        <div>
-          <a class='readmore' href='/2021/10/28/8%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95Mapping%E6%98%A0%E5%B0%84%E5%85%B3%E7%B3%BB/' itemprop="url">
-            阅读全文
-          </a>
+      <div id="lc-pv" data-title="分布式事务基础" data-path="/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><div class="story post-story"><p>指的就是一个操作单元，在这个操作单元中的所有操作最终要保持一致的行为，要么所有操作都成功，要么所有的操作都被撤销。</p>
+<p>通俗一点？举个生活中的例子：你去小卖铺买东西，“一手交钱，一手交货”就是一个事务的例子，交钱和交货必 须全部成功，事务才算成功，任一个活动失败，事务将撤销所有已成功的活动。</p>
+<p>事务可以看做是一次大的操作，它由不同的小操作组成，这些操作要么全部成功，要么全部失败。</p>
+</div><h2 id="事务的四个特性（ACID）"><a href="#事务的四个特性（ACID）" class="headerlink" title="事务的四个特性（ACID）"></a>事务的四个特性（ACID）</h2><div class="story post-story"><p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20180614161151856116.2ac01fe6.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20180614161151856116.2ac01fe6.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="事务特性"></p>
+<p><strong>原子性</strong>（Atomicity）：操作这些指令时，要么全部执行成功，要么全部不执行。只要其中一个指令执行失败，所有的指令都执行失败，数据进行回滚，回到执行指令前的数据状态。<code>要么执行，要么不执行</code></p>
+<p><strong>一致性</strong>（Consistency）：事务的执行使数据从一个状态转换为另一个状态，数据库的完整性约束没有被破坏。<code>能量守恒，总量不变</code></p>
+<blockquote>
+<p>拿转账来说，假设用户A和用户B两者的钱加起来一共是2000，那么不管A和B之间如何转账，转几次账，事务结束后两个用户的钱相加起来应该还得是2000，这就是事务的一致性。</p>
+</blockquote>
+<p><strong>隔离性</strong>（Isolation）：隔离性是当多个用户并发访问数据库时，比如操作同一张表时，数据库为每一个用户开启的事务，不能被其他事务的操作所干扰，多个并发事务之间要相互隔离。<code>信息彼此独立，互不干扰</code></p>
+<blockquote>
+<p>即要达到这么一种效果：对于任意两个并发的事务T1和T2，在事务T1看来，T2要么在T1开始之前就已经结束，要么在T1结束之后才开始，这样每个事务都感觉不到有其他事务在并发地执行。</p>
+</blockquote>
+<p><strong>持久性</strong>（Durability）：当事务正确完成后，它对于数据的改变是永久性的。<code>不会轻易丢失</code></p>
+<blockquote>
+<p>例如我们在使用JDBC操作数据库时，在提交事务方法后，提示用户事务操作完成，当我们程序执行完成直到看到提示后，就可以认定事务以及正确提交，即使这时候数据库出现了问题，也必须要将我们的事务完全执行完成，否则就会造成我们看到提示事务处理完毕，但是数据库因为故障而没有执行事务的重大错误。</p>
+</blockquote>
+<h1 id="分布式事务"><a href="#分布式事务" class="headerlink" title="分布式事务"></a>分布式事务</h1><p>随着互联网的快速发展，软件系统由原来的单体应用转变为分布式应用，下图描述了单体应用向微服务的演变：分布式系统会把一个应用系统拆分为可独立部署的多个服务，因此需要服务与服务之间远程协作才能完成事务操 作，这种分布式系统环境下由不同的服务之间通过网络远程协作完成事务称之为分布式事务，例如用户注册送积分 事务、创建订单减库存事务，银行转账事务等都是分布式事务。</p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/9c9a739e307f0402b809d9cd73ca615e.6eb1d80d.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/9c9a739e307f0402b809d9cd73ca615e.6eb1d80d.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>典型的场景就是微服务架构 微服务之间通过远程调用完成事务操作。 比如：订单微服务和库存微服务，下单的 同时订单微服务请求库存微服务减库存。 简言之：跨JVM进程产生分布式事务。</p>
+</div><h2 id="分布式事务产生场景"><a href="#分布式事务产生场景" class="headerlink" title="分布式事务产生场景"></a>分布式事务产生场景</h2><div class="story post-story"><ol>
+<li><p>跨JVM进程产生分布式事务</p>
+<p>典型的场景就是微服务架构 微服务之间通过远程调用完成事务操作。 比如：订单微服务和库存微服务，下单的 同时订单微服务请求库存微服务减库存。</p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20221005144930.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20221005144930.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+</li>
+<li><p>跨数据库实例</p>
+<p>典型的场景就是微服务架构 微服务之间通过远程调用完成事务操作。 比如：订单微服务和库存微服务，下单的 同时订单微服务请求库存微服务减库存。</p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20221005145014.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20221005145014.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>我们了解到了分布式事务的基础概念。与本地事务不同的是，分布式系统之所以叫分布式，是因 为提供服务的各个节点分布在不同机器上，相互之间通过网络交互。不能因为有一点网络问题就导致整个系统无法 提供服务，网络因素成为了分布式事务的考量标准之一。因此，分布式事务需要更进一步的理论支持，接下来，我们先来学习一下分布式事务的CAP理论。</p>
+</li>
+</ol>
+<h1 id="CAP原则"><a href="#CAP原则" class="headerlink" title="CAP原则"></a>CAP原则</h1><p>CAP原则又叫CAP定理，同时又被称作布鲁尔定理（Brewer’s theorem），指的是在一个分布式系统中，<strong>不可能同时满足以下三点</strong>。</p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/v2-135c492dbc2225ca86af34b837e446fa_720w.2a34b8c0.jpg" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/v2-135c492dbc2225ca86af34b837e446fa_720w.2a34b8c0.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<ul>
+<li><p>一致性（Consistency）<code>副本最新</code>：指强一致性，在写操作完成后开始的任何读操作都必须返回该值，或者后续写操作的结果。</p>
+<blockquote>
+<p>在一致性系统中，一旦客户端将值写入任何一台服务器并获得响应，那么之后client从其他任何服务器读取的都是刚写入的数据</p>
+<p>一致性保证了不管向哪台服务器写入数据，其他的服务器能实时同步数据</p>
+</blockquote>
+</li>
+<li><p>可用性（Availability）<code>高可用</code>：可用性是指，每次向未崩溃的节点发送请求，总能保证收到响应数据（允许不是最新数据）</p>
+</li>
+<li><p>分区容忍性（Partition tolerance）<code>能容忍网络分区</code>：分布式系统在遇到任何网络分区故障的时候，仍然能够对外提供满足一致性和可用性的服务</p>
+<blockquote>
+<p>服务器A和B发送给对方的任何消息都是可以放弃的，也就是说A和B可能因为各种意外情况，导致无法成功进行同步，分布式系统要能容忍这种情况。除非整个网络环境都发生了故障。</p>
+</blockquote>
+</li>
+</ul>
+<h1 id="分布式事务协议"><a href="#分布式事务协议" class="headerlink" title="分布式事务协议"></a>分布式事务协议</h1><blockquote>
+<p><strong>背景</strong></p>
+<p>在分布式系统里，每个节点都可以知晓自己操作的成功或者失败，却无法知道其他节点操作的成功或失败。当一个事务跨多个节点时，为了保持事务的原子性与一致性，而引入一个协调者来统一掌控所有参与者的操作结果，并指示它们是否要把操作结果进行真正的提交或者回滚（rollback）。</p>
+</blockquote>
+</div><h2 id="二阶段提交2PC"><a href="#二阶段提交2PC" class="headerlink" title="二阶段提交2PC"></a>二阶段提交<code>2PC</code></h2><div class="story post-story"><p>二阶段提交协议（Two-phase Commit，即 2PC）是常用的分布式事务解决方案，即将事务的提交过程分为两个阶段来进行处理。</p>
+<h3 id="阶段"><a href="#阶段" class="headerlink" title="阶段"></a>阶段</h3><ul>
+<li>准备阶段</li>
+<li>提交阶段</li>
+</ul>
+<h3 id="参与角色"><a href="#参与角色" class="headerlink" title="参与角色"></a>参与角色</h3><ul>
+<li>协调者：事务的发起者</li>
+<li>参与者：事务的执行者</li>
+</ul>
+<h3 id="第一阶段"><a href="#第一阶段" class="headerlink" title="第一阶段"></a>第一阶段</h3><ol>
+<li>协调者向所有参与者发送事务内容，询问是否可以提交事务，并等待答复</li>
+<li>各参与者执行事务操作，将 undo 和 redo 信息记入事务日志中（但不提交事务）</li>
+<li>如参与者执行成功，给协调者反馈<strong>同意</strong>，否则反馈<strong>中止</strong></li>
+</ol>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596360577153.3453f839.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596360577153.3453f839.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1596360577153"></p>
+<h3 id="第二阶段"><a href="#第二阶段" class="headerlink" title="第二阶段"></a>第二阶段</h3><p>当协调者节点从所有参与者节点获得的相应消息都为<strong>同意</strong>时：</p>
+<ol>
+<li><p>协调者节点向所有参与者节点发出<strong>正式提交</strong>(<code>commit</code>)的请求。</p>
+</li>
+<li><p>参与者节点正式完成操作，并释放在整个事务期间内占用的资源。</p>
+</li>
+<li><p>参与者节点向协调者节点发送<strong>ack完成</strong>消息。</p>
+</li>
+<li><p>协调者节点收到所有参与者节点反馈的<strong>ack完成</strong>消息后，完成事务。</p>
+</li>
+</ol>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596376239082.8842458a.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596376239082.8842458a.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1596376239082"></p>
+<p>如果任一参与者节点在第一阶段返回的响应消息为<strong>中止</strong>，或者 协调者节点在第一阶段的询问超时之前无法获取所有参与者节点的响应消息时：</p>
+<ol>
+<li><p>协调者节点向所有参与者节点发出<strong>回滚操作</strong>(<code>rollback</code>)的请求。</p>
+</li>
+<li><p>参与者节点利用阶段1写入的undo信息执行回滚，并释放在整个事务期间内占用的资源。</p>
+</li>
+<li><p>参与者节点向协调者节点发送<strong>ack回滚完成</strong>消息。</p>
+</li>
+<li><p>协调者节点受到所有参与者节点反馈的<strong>ack回滚完成</strong>消息后，取消事务。</p>
+</li>
+</ol>
+<p>不管最后结果如何，第二阶段都会结束当前事务。</p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596377554340.ccaebf14.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596377554340.ccaebf14.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1596377554340"></p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596376604142.7f3e53e1.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1596376604142.7f3e53e1.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="1596376604142"></p>
+<p>二阶段提交看起来确实能够提供原子性的操作，但是不幸的是，二阶段提交还是有几个缺点的：</p>
+<pre><code> 1. **性能问题**：执行过程中，所有参与节点都是事务阻塞型的。当参与者占有公共资源时，其他第三方节点访问公共资源不得不处于阻塞状态。
+ 1. **可靠性问题**：参与者发生故障。协调者需要给每个参与者额外指定超时机制，超时后整个事务失败。协调者发生故障。参与者会一直阻塞下去。需要额外的备机进行容错。
+ 1. **可靠性问题**：参与者发生故障。协调者需要给每个参与者额外指定超时机制，超时后整个事务失败。协调者发生故障。参与者会一直阻塞下去。需要额外的备机进行容错。
+</code></pre>
+<blockquote>
+<p><strong>优点</strong></p>
+<p>尽量保证了数据的强一致，适合对数据强一致要求很高的关键领域。（其实也不能100%保证强一致）</p>
+</blockquote>
+<blockquote>
+<p><strong>缺点</strong></p>
+<p>实现复杂，牺牲了可用性，对性能影响较大，不适合高并发高性能场景。</p>
+</blockquote>
+<h1 id="分布式事务解决方案"><a href="#分布式事务解决方案" class="headerlink" title="分布式事务解决方案"></a>分布式事务解决方案</h1><ul>
+<li>TCC</li>
+<li>全局消息</li>
+<li>基于可靠消息服务的分布式事务</li>
+<li>最大努力通知</li>
+</ul>
+</div><h2 id="事务补偿（TCC）"><a href="#事务补偿（TCC）" class="headerlink" title="事务补偿（TCC）"></a>事务补偿（TCC）</h2><div class="story post-story"><p>TCC方案是一种应用层面侵入业务的两阶段提交。是目前最火的一种柔性事务方案，其核心思想是：针对每个操作，都要注册一个与其对应的确认和补偿（撤销）操作</p>
+<ol>
+<li>第一阶段</li>
+</ol>
+<p>​    Try（尝试）：主要是对业务系统做检测及资源预留 <strong>(加锁，锁住资源)</strong></p>
+<ol start="2">
+<li>第二阶段</li>
+</ol>
+<p>​    本阶段根据第一阶段的结果，决定是执行confirm还是cancel</p>
+<p>​    Confirm（确认）：执行真正的业务<code>执行业务，释放锁</code></p>
+<p>​    Cancle（取消）：是预留资源的取消<code>出问题，释放锁</code></p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1010726-20191031060901955-1099206419.730de9e5.png" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/1010726-20191031060901955-1099206419.730de9e5.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+</div><h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><div class="story post-story"><p>为了方便理解，下面以电商下单为例进行方案解析，这里把整个过程简单分为扣减库存，订单创建 2 个步骤，库存服务和订单服务分别在不同的服务器节点上。</p>
+<p>假设商品库存为 100，购买数量为 2，这里检查和更新库存的同时，冻结用户购买数量的库存，同时创建订单，订单状态为待确认。</p>
+<ol>
+<li>Try阶段</li>
+</ol>
+<p>​    TCC 机制中的 Try 仅是一个初步操作，它和后续的确认一起才能真正构成一个完整的业务逻辑，这个阶段主要完成：</p>
+<ul>
+<li>完成所有业务检查( 一致性 ) 。</li>
+<li>预留必须业务资源( 准隔离性 ) 。</li>
+<li>Try 尝试执行业务。</li>
+</ul>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/a45bc145f97d4f11a168968cac37dcbb.f0507a86.jpeg" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/a45bc145f97d4f11a168968cac37dcbb.f0507a86.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"> </p>
+<ol start="2">
+<li>Confirm / Cancel 阶段</li>
+</ol>
+<p>​    根据 Try 阶段服务是否全部正常执行，继续执行确认操作（Confirm）或取消操作（Cancel）。</p>
+<p>​    Confirm 和 Cancel 操作满足幂等性，如果 Confirm 或 Cancel 操作执行失败，将会不断重试直到执行完成。</p>
+<p>​    <strong>Confirm：当 Try 阶段服务全部正常执行， 执行确认业务逻辑操作</strong></p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/7297c173bc7845c2bed213ba62073422.e510273b.jpeg" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/7297c173bc7845c2bed213ba62073422.e510273b.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>​    这里使用的资源一定是 Try 阶段预留的业务资源。在 TCC 事务机制中认为，如果在 Try 阶段能正常的预留资源，那 Confirm 一定能完整正确的提交。</p>
+<p>​    Confirm 阶段也可以看成是对 Try 阶段的一个补充，Try+Confirm 一起组成了一个完整的业务逻辑。</p>
+<p>​    <strong>Cancel：当 Try 阶段存在服务执行失败， 进入 Cancel 阶段</strong></p>
+<p><img src="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/dd580f077bd64db4bf305b3b1657a7df.f3a1e2e2.jpeg" class="lazyload" data-srcset="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/dd580f077bd64db4bf305b3b1657a7df.f3a1e2e2.jpeg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="img"></p>
+<p>Cancel 取消执行，释放 Try 阶段预留的业务资源，上面的例子中，Cancel 操作会把冻结的库存释放，并更新订单状态为取消。</p>
+</div><h2 id="最终一致性保证"><a href="#最终一致性保证" class="headerlink" title="最终一致性保证"></a>最终一致性保证</h2><div class="story post-story"><ul>
+<li>TCC 事务机制以初步操作（Try）为中心的，确认操作（Confirm）和取消操作（Cancel）都是围绕初步操作（Try）而展开。因此，Try 阶段中的操作，其保障性是最好的，即使失败，仍然有取消操作（Cancel）可以将其执行结果撤销。</li>
+<li>Try阶段执行成功并开始执行 <code>Confirm</code>阶段时，默认 <code>Confirm</code>阶段是不会出错的。也就是说只要<code>Try</code>成功，<code>Confirm</code>一定成功<code>TCC设计之初的定义</code> 。</li>
+<li>Confirm与Cancel如果失败，由TCC框架进行==重试==补偿</li>
+<li>存在极低概率在CC环节彻底失败，则需要定时任务或人工介入</li>
+</ul>
+</div><h2 id="方案总结"><a href="#方案总结" class="headerlink" title="方案总结"></a>方案总结</h2><div class="story post-story"><p>TCC 事务机制相对于传统事务机制（X/Open XA），TCC 事务机制相比于上面介绍的 XA 事务机制，有以下优点：</p>
+<ul>
+<li>性能提升：具体业务来实现控制资源锁的粒度变小，不会锁定整个资源。</li>
+<li>数据最终一致性：基于 Confirm 和 Cancel 的幂等性，保证事务最终完成确认或者取消，保证数据的一致性。</li>
+<li>可靠性：解决了 XA 协议的协调者单点故障问题，由主业务方发起并控制整个业务活动，业务活动管理器也变成多点，引入集群。</li>
+</ul>
+<p><strong>缺点：</strong> TCC 的 Try、Confirm 和 Cancel 操作功能要按具体业务来实现，业务耦合度较高，提高了开发成本。</p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
+      
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/>https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/</a></p>
+              
+            
+          </blockquote>
+        </div>
+      
+      
+        <div class='donate'>
+          <div class='imgs'>
+            
+              <img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194138.png' alt="This is a picture without description" >
+            
+              <img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026194201.png' alt="This is a picture without description" >
+            
+          </div>
         </div>
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2022-10-05T15:18:06+08:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年10月5日</p>
+  </a>
 </div>
 
-          </div>
         
       
         
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/7%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(3)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Java/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>Java</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>分布式</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E4%BA%8B%E5%8A%A1/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>事务</p></a></div>
+  <span hidden itemprop="keywords">Java 分布式 事务</span>
+
+
+        
+      
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/&title=分布式事务基础 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/&title=分布式事务基础 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/&title=分布式事务基础 - Suave's Blog&summary="
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：3.5k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：11 分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
   
+
   
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/2022/06/28/Java%E4%B8%ADtransient%E5%85%B3%E9%94%AE%E5%AD%97%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>Java中transient关键字的使用<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>transient的作用及使用方法​    我们都知道一个对象只要实现了Serilizable接口，这个对象就可以被序列化，java的这种序列化模式为开发者提供了很多便利，我们可以不必关系具体序...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
     <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+      <meta itemprop="discussionUrl" content="/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/index.html#comments">
     </span>
-  
-  
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/7%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(3)/"  itemprop="url">
-        7、ElasticSearch文档的查询(3)
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
     
-      
-        高亮查询12345678910111213GET shopping/_search&#123;	&quot;query&quot;:&#123;		&quot;match_phrase&quot;:&#123;			&quot;category&quot; : &quot;为&quot;		&#125;	&#125;,  &quot;highlight&quot;:&#123;    &qu...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T16:56:19+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/7%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(3)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
+    <div id="layoutHelper-comments"></div>
 
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/6%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(2)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
+  </article>
   
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/6%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(2)/"  itemprop="url">
-        6、ElasticSearch文档的查询(2)
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        多条件查询
-假设想找出小米牌子，价格为3999元的。（must相当于数据库的&amp;&amp;）
-
-12345678910111213141516GET shopping/_search&#123;	&quot;query&quot;:&#123;		&quot;bool&quot;:&#123;			&quot;must&quot;:[&#123;				&quot;match&quot...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T16:14:19+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/6%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(2)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/5%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(1)/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/5%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(1)/"  itemprop="url">
-        5、ElasticSearch文档的查询(1)
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        主键查询1GET shopping/_doc/1
-
-
-全查询1GET shopping/_search
-
-
-条件查询通过链接上拼接参数的方式1GET shopping/_search?q=category:华为
-
-
-PS:不建议将参数拼接在链接上，可能会有乱码问题
-通过请求体12345678GET shopping/_search&#123;	&quot;query&quot;:&#123;...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T15:28:09+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/5%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E6%9F%A5%E8%AF%A2(1)/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/4%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E4%BF%AE%E6%94%B9/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/4%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E4%BF%AE%E6%94%B9/"  itemprop="url">
-        4、ElasticSearch文档的修改
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        完全覆盖修改完全覆盖操作是幂等操作，因此可以使用PUT方法
-1234567PUT shopping/_doc/1&#123;    &quot;title&quot;:&quot;华为手机&quot;,    &quot;category&quot;:&quot;华为&quot;,    &quot;images&quot;:&quot;http://www.gulixueyuan.com/...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T13:56:43+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/4%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E4%BF%AE%E6%94%B9/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/3%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E5%88%9B%E5%BB%BA/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/3%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E5%88%9B%E5%BB%BA/"  itemprop="url">
-        3、ElasticSearch文档的创建及删除
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        创建文档创建文档需要使用POST请求，如果用PUT请求则会报错，原因是PUT请求应当为幂等性操作，而不指定id直接创建文档时，会不断生成新的文档，该操作不为幂等操作，因此无法使用PUT请求
-1234567PUT shopping/_doc&#123;    &quot;title&quot;:&quot;小米手机&quot;,    &quot;category&quot;:&quot;小米...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T11:16:14+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/3%E3%80%81ElasticSearch%E6%96%87%E6%A1%A3%E7%9A%84%E5%88%9B%E5%BB%BA/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/"  itemprop="url">
-        2、ElasticSearch索引的创建查询及删除
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        
-后续操作均在Kibana的Dev Tools中完成
-
-创建索引创建使用PUT的请求方式
-先创建一个名为shopping的索引
-1PUT shopping
-
-
-此时再次调用则会报错
-
-查询索引
-查询指定索引
-将PUT改为GET即可
-1GET shopping
 
 
 
-查询所有的索引
-加上?v后会展示字段头信息
-1GET _cat/indices?v
 
 
-删除索引与查询指定索引的逻辑一致，将请求...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-27T10:30:25+08:00">2021-10-27</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/27/2%E3%80%81ElasticSearch%E7%B4%A2%E5%BC%95%E7%9A%84%E5%88%9B%E5%BB%BA%E6%9F%A5%E8%AF%A2%E5%8F%8A%E5%88%A0%E9%99%A4/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/26/1%E3%80%81Docker%E5%AE%89%E8%A3%85ElasticSearch%E5%92%8CKibana/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/26/1%E3%80%81Docker%E5%AE%89%E8%A3%85ElasticSearch%E5%92%8CKibana/"  itemprop="url">
-        1、Docker安装ElasticSearch和Kibana
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        安装ElasticSearch先拉下es的镜像
-1docker pull elasticsearch:7.12.0
-
-镜像拉取完毕后新建容器
-1docker run --name elasticsearch -p 9200:9200 -d elasticsearch:7.12.0
-
-等es启动完成后，可以在命令行输入
-1curl http://127.0.0.1:9200
-
-或者在浏览器中打...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-26T21:09:45+08:00">2021-10-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/ElasticSearch/">ElasticSearch</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/ElasticSearch/" itemprop="url"><span itemprop="name">ElasticSearch</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/26/1%E3%80%81Docker%E5%AE%89%E8%A3%85ElasticSearch%E5%92%8CKibana/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="https://suavess.github.io/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="Suave's Blog">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/"  itemprop="url">
-        MySQL-limit数据丢失问题
-      </a>
-    </h2>
-  
-  <div class='md' itemprop="articleBody">
-    
-      
-        
-今天在项目中遇到一个很奇怪的bug，前端调接口分页返回数据时，有两条数据在第一页的最后返回了，然后又在第二页的头返回了，本以为是程序的问题，排查了半天最后发现是Mysql的问题。
-
-Mysql表数据
-查询流程先尝试查询前二十条数据1SELECT * FROM tb_customer_open_sea WHERE corpid = &#x27;1&#x27; AND del = 0 LIMI...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' href='/'><img src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" ></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png">
-            <meta itemprop="name" content="Suave">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-10-26T15:06:42+08:00">2021-10-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/MySQL/">MySQL</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/10/26/Mysql-limit%E6%95%B0%E6%8D%AE%E4%B8%A2%E5%A4%B1%E9%97%AE%E9%A2%98/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
-
-
-	
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -3189,141 +2927,34 @@ Mysql表数据
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://blog-pic-project.oss-cn-hangzhou.aliyuncs.com/img/20211026193444.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-        
-        
-          <p><span id="jinrishici-sentence">Suave's Blog</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fas fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:1132888093@qq.com"
-              class="social fas fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/suavess/"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="/"
-              class="social fas fa-headphones-alt flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/ElasticSearch/" href="/categories/ElasticSearch/"
-            active-action="action-categoriesElasticSearch"
-            ><div class='name'>ElasticSearch</div><div class='badge'>(8)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MySQL/" href="/categories/MySQL/"
-            active-action="action-categoriesMySQL"
-            ><div class='name'>MySQL</div><div class='badge'>(6)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/" href="/categories/%E5%88%86%E5%B8%83%E5%BC%8F/"
-            active-action="action-categoriesE58886E5B883E5BC8F"
-            ><div class='name'>分布式</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-text">概念</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E7%9A%84%E5%9B%9B%E4%B8%AA%E7%89%B9%E6%80%A7%EF%BC%88ACID%EF%BC%89"><span class="toc-text">事务的四个特性（ACID）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E4%BA%A7%E7%94%9F%E5%9C%BA%E6%99%AF"><span class="toc-text">分布式事务产生场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E9%98%B6%E6%AE%B5%E6%8F%90%E4%BA%A42PC"><span class="toc-text">二阶段提交2PC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%98%B6%E6%AE%B5"><span class="toc-text">阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E4%B8%8E%E8%A7%92%E8%89%B2"><span class="toc-text">参与角色</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E9%98%B6%E6%AE%B5"><span class="toc-text">第一阶段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E9%98%B6%E6%AE%B5"><span class="toc-text">第二阶段</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E5%8A%A1%E8%A1%A5%E5%81%BF%EF%BC%88TCC%EF%BC%89"><span class="toc-text">事务补偿（TCC）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E4%B8%80%E8%87%B4%E6%80%A7%E4%BF%9D%E8%AF%81"><span class="toc-text">最终一致性保证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E6%80%BB%E7%BB%93"><span class="toc-text">方案总结</span></a></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Docker/" style="font-size: 14px; color: #999">Docker</a> <a href="/tags/ElasticSearch/" style="font-size: 24px; color: #555">ElasticSearch</a> <a href="/tags/Java/" style="font-size: 21.5px; color: #666">Java</a> <a href="/tags/MySQL/" style="font-size: 19px; color: #777">MySQL</a> <a href="/tags/%E4%BA%8B%E5%8A%A1/" style="font-size: 14px; color: #999">事务</a> <a href="/tags/%E5%85%B3%E9%94%AE%E5%AD%97/" style="font-size: 14px; color: #999">关键字</a> <a href="/tags/%E5%88%86%E5%B8%83%E5%BC%8F/" style="font-size: 14px; color: #999">分布式</a> <a href="/tags/%E5%8F%8D%E7%BC%96%E8%AF%91/" style="font-size: 16.5px; color: #888">反编译</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 14px; color: #999">基础</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" style="font-size: 14px; color: #999">数据结构</a> <a href="/tags/%E7%B4%A2%E5%BC%95/" style="font-size: 16.5px; color: #888">索引</a> <a href="/tags/%E7%B4%A2%E5%BC%95%E5%A4%B1%E6%95%88/" style="font-size: 14px; color: #999">索引失效</a> <a href="/tags/%E8%A1%8C%E9%94%81/" style="font-size: 14px; color: #999">行锁</a> <a href="/tags/%E8%A1%A8%E9%94%81/" style="font-size: 14px; color: #999">表锁</a> <a href="/tags/%E8%A7%A6%E5%8F%91%E5%99%A8/" style="font-size: 14px; color: #999">触发器</a> <a href="/tags/%E9%94%81%E6%9C%BA%E5%88%B6/" style="font-size: 14px; color: #999">锁机制</a> <a href="/tags/%E9%9B%86%E5%90%88/" style="font-size: 14px; color: #999">集合</a>
-    </div>
-  </section>
-
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -3352,14 +2983,15 @@ Mysql表数据
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="分布式事务基础";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3368,14 +3000,14 @@ Mysql表数据
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3473,8 +3105,8 @@ Mysql表数据
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1664954297830')
-      volantis.js('/js/message.js?time=1664954297830', () => {
+      volantis.css('/css/message.css?time=1664954297748')
+      volantis.js('/js/message.js?time=1664954297748', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3519,8 +3151,8 @@ Mysql表数据
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1664954297830')
-      volantis.js('/js/message.js?time=1664954297830', () => {
+      volantis.css('/css/message.css?time=1664954297748')
+      volantis.js('/js/message.js?time=1664954297748', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3579,8 +3211,8 @@ Mysql表数据
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1664954297830')
-      volantis.js('/js/message.js?time=1664954297830', () => {
+      volantis.css('/css/message.css?time=1664954297748')
+      volantis.js('/js/message.js?time=1664954297748', () => {
         hideMessage(done);
       });
     } else {
@@ -3762,7 +3394,7 @@ Mysql表数据
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/rightMenu.js?time=1664954297830')
+    volantis.js('/js/rightMenu.js?time=1664954297748')
   </script>
 
 
@@ -3875,19 +3507,19 @@ volantis.pjax.push(bindToggleButton);
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1664954297830")
+        volantis.js("/js/plugins/sites.js?time=1664954297748")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1664954297830")
+        volantis.js("/js/plugins/friends.js?time=1664954297748")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1664954297830")
+        volantis.js("/js/plugins/contributors.js?time=1664954297748")
       }
     
   };
@@ -4015,7 +3647,7 @@ volantis.pjax.push(bindToggleButton);
       emojiMaps: emojiMaps,
     }),pdata.commentConfig))
   }
-  volantis.js('/js/valine.js?time=1664954297830').then(pjax_valine)
+  volantis.js('/js/valine.js?time=1664954297748').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -4024,7 +3656,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-<script src="/js/app.js?time=1664954297830.js"></script>
+<script src="/js/app.js?time=1664954297748.js"></script>
 
 
 <!-- optional -->
@@ -4037,7 +3669,7 @@ volantis.pjax.push(bindToggleButton);
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1664954297830");
+    return volantis.js("/js/search/hexo.js?time=1664954297748");
   }
 
   function loadSearchService() {
@@ -4493,7 +4125,7 @@ volantis.pjax.push(bindToggleButton);
 
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://suavess.github.io/","name":"Suave's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://suavess.github.io/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"https://suavess.github.io/archives/2021/","name":"2021年"}},{"@type":"ListItem","position":4,"item":{"@id":"https://suavess.github.io/archives/2021/10/","name":"10月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"Suave's Blog","url":"https://suavess.github.io/","keywords":null,"description":"","author":{"@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","description":""},"publisher":{"@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"https://suavess.github.io?s={search_term_string}"},"query-input":"required name=search_term_string"}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"Suave's Blog","url":"https://suavess.github.io/","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/","sameAs":["https://github.com/volantis-x"],"description":""},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"https://suavess.github.io/","name":"Suave's Blog"}},{"@type":"ListItem","position":2,"item":{"@id":"https://suavess.github.io/categories/分布式/","name":"分布式"}},{"@type":"ListItem","position":3,"item":{"@id":"https://suavess.github.io/2022/10/05/分布式事务基础/","name":"分布式事务基础"}}]},{"@context":"http://schema.org","@type":"BlogPosting","headline":"分布式事务基础","description":"","datePublished":"2022-10-05T05:44:19.000Z","dateModified":"2022-10-05T07:18:06.329Z","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/"},"author":{"@type":"Person","name":"Suave","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png"},"url":"https://suavess.github.io/"},"publisher":{"@type":"Organization","name":"Suave's Blog","logo":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"https://suavess.github.io/2022/10/05/%E5%88%86%E5%B8%83%E5%BC%8F%E4%BA%8B%E5%8A%A1%E5%9F%BA%E7%A1%80/","wordCount":0,"articleSection":"分布式","keywords":"Java,分布式,事务","image":{"@type":"ImageObject","url":"https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 <!-- more -->
